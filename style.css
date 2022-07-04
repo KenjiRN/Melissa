@@ -1,0 +1,299 @@
+ /* Resets all browsers */
+/***********************************/
+*{margin: 0; padding: 0; outline: 0}
+
+/* RWD Img */
+/***********************************/
+img{max-width: 100%}
+.container{max-width: 2560px; margin: 0 auto; padding: 0 20px}
+.image{max-width: 100%}
+
+/* Resources */
+/***********************************/
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Dosis);
+@font-face {
+  font-family: 'Gloria Hallelujah';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gloria Hallelujah'), local('GloriaHallelujah'), url(http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v5/CA1k7SlXcY5kvI81M_R28Y5mSNQmgKshuii2YddNQzE.woff) format('woff');/*Oh, fancy. To be used only if needed*/
+};
+
+/* Helpers */
+/***********************************/
+.margin-top-10 {padding-top:10px;}
+.margin-bot-10 {padding-bottom:10px;}
+
+/* Tooltips */
+/***********************************/
+a[data-tooltip] {position: relative;}
+a[data-tooltip]::before,
+a[data-tooltip]::after {position: absolute;display: none; opacity: 0.85;}
+/*
+   * using data-tooltip instead of title so we 
+   * don't have the real tooltip overlapping
+   * we don't want the text to wrap */
+a[data-tooltip]::before {
+  content: attr(data-tooltip);
+  background: orangered;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+a[data-tooltip]::after {
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  content: '';
+}
+
+a[data-tooltip]:hover::before,
+a[data-tooltip]:hover::after {display: block;}
+
+/** positioning **/
+
+/* left tooltip */
+a[data-tooltip][data-placement="left"]::before {
+  top: -25%;
+  right: 100%;
+  margin-right: 10px;
+}
+a[data-tooltip][data-placement="left"]::after {
+  border-left-color: orangered;
+  border-right: none;
+  top: 50%;
+  right: 100%;
+  margin-top: -6px;
+  margin-right: 4px;
+}
+
+/* right tooltip */
+a[data-tooltip][data-placement="right"]::before {
+  top: -25%;
+  left: 100%;
+  margin-left: 10px;
+}
+a[data-tooltip][data-placement="right"]::after {
+  border-right-color: orangered;
+  border-left: none;
+  top: 50%;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: 4px;
+}
+
+/* top tooltip */
+a[data-tooltip][data-placement="top"]::before {
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 10px;
+}
+a[data-tooltip][data-placement="top"]::after {
+  border-top-color: orangered;
+  border-bottom: none;
+  bottom: 100%;
+  left: 10px;
+  margin-bottom: 4px;
+}
+
+/* bottom tooltip */
+a[data-tooltip][data-placement="bottom"]::before {
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+}
+a[data-tooltip][data-placement="bottom"]::after {
+  border-bottom-color: orangered;
+  border-top: none;
+  top: 100%;
+  left: 10px;
+  margin-top: 4px;
+}
+
+/* Typography */
+/***********************************/
+body{font-size:16px;}
+h1 {font-family: 'Noto Sans', sans-serif; font-size:2.3em; font-weight:400; text-transform: uppercase; color:black; padding:0; margin:0;margin-bottom: 30px;overflow: hidden;}
+h2 {font-family: 'Noto Sans', sans-serif; font-size:2.5em; letter-spacing:20px; text-align:center; color:white; font-weight:400; text-transform:uppercase; z-index:10; opacity:.8;overflow: hidden;}
+h3 {font-family: 'Noto Sans', sans-serif; font-size:1.8em; line-height:1.9rem; font-weight:300; letter-spacing:6px; text-transform: uppercase; color:black;overflow: hidden;}
+h4 {font-family: 'Noto Sans', sans-serif; font-size:1.6em; line-height:1.9rem; font-weight:300; letter-spacing:1px; text-transform: uppercase; color:gainsboro;overflow: hidden;}  
+p, li, .Scroll {font-family:'Source Sans Pro', sans-serif; font-weight:400; font-size:1.5em; line-height:1.5em;letter-spacing:1px; margin-bottom: 10px;}
+ul {list-style-type: square; margin-left: 1em; padding-left: 1.5}
+.heading{text-align:center; font-family: 'Noto Sans'; padding: 2em;}
+.key{color:grey; font-family:'Source Sans Pro', sans-serif; font-weight:400; overflow: hidden;}
+a:link, a:visited, a:active {color: darkslateblue; text-decoration: none; text-decoration-style:dotted;} 
+a:hover {color: orangered; text-decoration: none;}
+quote{font-family:'Gloria Hallelujah', sans-serif; font-weight:400; font-size:2.5em; line-height:2.7em; color: grey; font-style:italic;}
+#projects {font-family:'Dosis', sans-serif; font-weight:400; font-size:2em; line-height:1.5em; color: grey; text-align: center;vertical-align: middle; display: block; margin-bottom: 1.6em;}
+.likes{line-height:-30px; font-family: 'Source Sans Pro';}
+.Scroll{text-align: center; color: white;}
+a.white:link, a.white:visited, a.white:active {color: white; text-decoration: none;}
+.title h1{font-size: 3em;}
+.title h3{font-size: 1.3em;}
+
+/* Icons & Images */
+/***********************************/
+.pcpic{border-radius:180px;}
+img{float: center; margin: 0 auto; display: block; margin-left: auto; margin-right: auto; padding: 3rem;}
+.Scroll{margin: 0 auto;} 
+.social li {cursor: pointer;position: relative;list-style-type: none; margin-right: 10px;display: inline-block;font-weight: 300;font-size:14px;font-family: "Open Sans", sans-serif;}
+.social a {float: left;text-decoration: none;}
+.social i {width: 38px;}
+.social .icon {border-radius: 19px;width: 40px;height: 40px;line-height: 38px;position: relative;text-align: center;transition: width .25s ease-in-out, background-color .25s ease-in-out; box-shadow: rgba(0, 0, 0, .28) 0 2px 3px; color: #fafafa;overflow: hidden;}
+.social li:hover .icon {width: 100%;padding-right: 12px;}
+.wordpress {background-color: #1E8CBE;}
+.twitter {background-color: #00aced;}
+.codepen {background-color: #222222;}
+/*.google-plus {background-color: #dd4b39;}*/
+.linkedin {background-color: #007bb6;}
+.github {background-color: #000;}
+/*.pinterest {background-color: #cb2027;}*/
+.flickr {background-color: #ff0084;}
+.behance {background-color: #000000;}
+
+/* Container */
+/***********************************/
+body, .container {margin:0; padding:0;background: rgb(255,255,255);}
+
+
+/* Section - Title */
+/***********************************/
+.title {background: white; padding: 60px; margin:0 auto; text-align:center;}
+.title h1 {font-size:35px; letter-spacing:2px;}
+
+/* Section - Block */
+/***********************************/
+.block {background: rgb(255,255,255); padding: 15px; width:90%; margin:0 auto; text-align:justify;}
+.block-gray {background: #f2f2f2;padding: 60px;}
+.section-overlay-mask {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: black; opacity: 0.70;}
+
+/* Section - Parallax */
+/***********************************/
+
+.parallax{
+  padding-top: 200px;
+  padding-bottom: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 25em;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;}
+
+.parallax-one{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Amazon_Theatre_in_Manaus.jpg/1024px-Amazon_Theatre_in_Manaus.jpg); overflow: hidden;
+}
+  
+.parallax-two {         
+  background-image: url(3.jpeg);
+    overflow: hidden;
+}
+
+.parallax-three {
+  background-image: url(study.png);
+    overflow: hidden;
+}
+
+.parallax-four {
+  background-image:           url(https://aventurasnahistoria.uol.com.br/media/_versions/capaamaz34we_widelg.jpg);
+    overflow: hidden;
+ }
+
+.parallax-five {
+  background-image:           url(https://wallpapercave.com/wp/ypnfGhZ.jpg);
+    overflow: hidden;
+}
+
+.parallax-six {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10rem;
+  background-color: grey;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;}
+.parallax-seven {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 25rem;
+  background-color: #2D3339;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;}
+
+/* Extras */
+/***********************************/
+.line-break {border-bottom:1px solid grey; width: 190px; margin:0 auto;}
+
+/* Media Queries */
+/***********************************/
+@media screen and (max-width: 768px) {
+    *{margin: 0; padding: 0; outline: 0}
+    img, .image{max-width: 100%}
+    .container{max-width: 2560px; margin: 0 auto;}
+    .block {padding: 10px; width:90%;}
+    img{margin: 0px auto; display: block; padding: 20px 0 20px 0; height: 10em; width: 10em;}
+    .parallax-one, .parallax-two, .parallax-three, .parallax-four, .parallax-five, .parallax-six, .parallax-seven {padding-top:13em; padding-bottom:13em;}
+    .about{text-align: center;margin: 0 auto; position: absolute; padding-left: 35%;}
+    .pbackground{width:  767px; margin: 0px auto;}
+    .container, .image{display: block; height: auto; width: 100%;}
+    .parallax-seven quote{font-size: 1.6em;}
+    .title h1{font-size: 2em;}
+    h1{font-size: 1.6em;overflow: hidden;}
+    h2{line-height:2.6rem; height: auto;overflow: hidden; font-size: 2em;}
+    h3{font-size: 1em; letter-spacing:3px;}
+    .title img{height: 12em; width: 12em;}
+    .title h3{font-size: 1.2em;}
+    .block img{height: 5em; width: 5em;}
+    p, li{font-size: 1.1em; line-height: 1.3em;}
+    ul {list-style-type: square; margin-left: .7em; padding-left: 1;}
+    h1, h2, h3, h4, p, ul, li, img, div{overflow: hidden;}
+}
+
+@media (max-width:650px){
+    .about{text-align: center;margin: 0 auto; position: absolute; padding-left: 25%;}
+    .pbackground{width:  650px; margin: 0px auto;}
+    .parallax-seven quote, #projects{font-size: 1.4em; line-height: 1.6em; margin-bottom: 2em;}
+    .title h1{font-size: 2em;}
+    h1{font-size: 1.6em;overflow: hidden;}
+    h2{line-height:1.5rem; height: auto;overflow: hidden; font-size: 1.5em;}
+    h3{font-size: 1em; letter-spacing:2px;}
+    .title img{height: 10.5em; width: 10.5em;}
+    .title h3{font-size: 1em;}
+    .block img{height: 5em; width: 5em;}
+    p, li{font-size: .9em; line-height: 1.2em;}
+    quote{font-weight:200; font-size:.8em; line-height:.8em; color: grey; font-style:italic;}
+    ul {list-style-type: square; margin-left: .5em; padding-left: .8;}
+    h1, h2, h3, h4, p, ul, li, img, div{overflow: hidden;}
+    
+}
+
